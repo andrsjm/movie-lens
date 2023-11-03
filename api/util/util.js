@@ -42,4 +42,4 @@ export const removeEmptyProperties = (obj) => {
       }
     }
     return obj;
-  }
+}

@@ -26,17 +26,22 @@ export const filmSchema = mongoose.Schema(
             type: String,
             required: true,
         },
-        trailer: {
+        synopsis: {
             type: String,
             required: true,
         },
+        trailer: {
+            type: String,
+            required: false,
+            default:"",
+        },
         pictures: {
-            type: [String],
-            default: false,
+            type: [Buffer],
+            required:false,
         },
         status: {
             type: Boolean,
-            required: true,
+            default: true,
         },   
     }
 )

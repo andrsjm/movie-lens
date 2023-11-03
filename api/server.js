@@ -3,6 +3,7 @@ import "dotenv/config"
 import { connectDB } from "./util/db.js";
 import authRoutes from "./routes/auth.js"
 import userRoutes from "./routes/user.js"
+import filmRoutes from "./routes/film.js"
 import  BodyParser  from "body-parser";
 import cookieParser from "cookie-parser";
 
@@ -17,6 +18,8 @@ app.use(BodyParser.urlencoded({extended: true}))
 
 app.use("/auth", authRoutes)
 app.use("/user", userRoutes)
+app.use("/film", filmRoutes)
+
 
 app.listen(process.env.PORT, () => {
     connectDB()
