@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import Studio from "./studio.js";
+import { studioSchema } from "./studio.js";
 
 const bioskopSchema = mongoose.Schema(
     {
@@ -20,7 +20,7 @@ const bioskopSchema = mongoose.Schema(
             required: true,
         },
         studios: {
-            type: [Studio],
+            type: [studioSchema],
             required: false,
         },
         status: {

@@ -8,7 +8,7 @@ export const filmEntityParser = (req) => {
 }
 
 export const filmFilter = (req) => {
-    const filter = {limit:parseInt(req.query.limit), skip:parseInt(req.query.skip) - 1, _id: req.user.id}
+    const filter = {limit:parseInt(req.query.limit), skip:parseInt(req.query.skip) - 1}
     
     return filter
 }

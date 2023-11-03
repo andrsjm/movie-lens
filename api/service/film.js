@@ -35,9 +35,9 @@ export const getFilm = async (req, res) => {
 export const updateFilm = async (req, res) => {
     const film = updateFilmParser(req)
 
-    console.log(film)
+    const id = filmID(req)
 
-    const success = await updateFilmRepo(film)
+    const success = await updateFilmRepo(id, film)
 
     if (!success) return failedAddResponse(res)
     

@@ -6,9 +6,9 @@ const router = express.Router()
 
 router.post("/", isAdmin, insertFilm)
 
-router.get("/", isAdmin, getAllFilm)
+router.get("/", getAllFilm)
 
-router.get("/:id", isAdmin, getFilm)
+router.get("/:id", getFilm)
 
 router.put("/:id", isAdmin, updateFilm)
 
