@@ -18,7 +18,6 @@ export const studioSchema = mongoose.Schema(
             type: Boolean,
             default: true,
         },
-        
     }
 )
 
