@@ -40,3 +40,10 @@ export const failedLoginResponse = (res) => {
         'Status': 400,
     });
 }
+
+export const unauthorizedResponse = (res) => {
+    res.status(401).json({
+        'Status': 401,
+        'Message':"Unauthorized Access",
+    });
+}

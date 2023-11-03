@@ -1,8 +1,8 @@
 import { User } from "../entity/user.js"
-import { getHashedPassword } from "../util/util.js"
+import { getHashedPassword, removeEmptyProperties } from "../util/util.js"
 
 
-const userParser = async (req) => {
+export const userEntityParser = async (req) => {
     const password = await getHashedPassword(req.body.password)
 
     req.body.password = password
@@ -12,5 +12,28 @@ const userParser = async (req) => {
     return user
 }
 
+export const loginParser =  async (req) => {
+    const filter = {email:req.body.email, password:req.body.password}
 
-export default userParser
+    return filter
+}
+
+export const updateUserParser = (req) => {
+    const user = removeEmptyProperties(req.body)
+
+    return user
+}
+
+export const userFilter = (req) => {
+    const filter = {limit:parseInt(req.query.limit), skip:parseInt(req.query.skip) - 1, _id: req.user.id}
+    
+    return filter
+}
+
+export const userID = (req) => {
+    const filter = {_id: req.params.id}
+
+    return filter
+}
+
+

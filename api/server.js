@@ -2,6 +2,7 @@ import Express from "express";
 import "dotenv/config"
 import { connectDB } from "./util/db.js";
 import authRoutes from "./routes/auth.js"
+import userRoutes from "./routes/user.js"
 import  BodyParser  from "body-parser";
 import cookieParser from "cookie-parser";
 
@@ -15,6 +16,7 @@ app.use(Express.urlencoded({extended : true}))
 app.use(BodyParser.urlencoded({extended: true}))
 
 app.use("/auth", authRoutes)
+app.use("/user", userRoutes)
 
 app.listen(process.env.PORT, () => {
     connectDB()
